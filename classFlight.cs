@@ -22,8 +22,8 @@ class Flight
     public string getDestination() { return destination; }
     public int getMaxSeats() { return maxSeats; }
     public int getNumPassengers() { return numPassengers; }
-    public bool addPassenger(Customer c)
     
+    public bool addPassenger(Customer c)
     {
         if (numPassengers >= maxSeats) { return false; }
         passengers[numPassengers] = c;
