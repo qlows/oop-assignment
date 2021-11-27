@@ -5,6 +5,8 @@ class Customer
     private string lName;
     private int phoneNumber;
     private Booking[] bookings;
+    private int numOfBookings;
+    
 
     public Customer(int id, string fName, string lName, int phone)
     {
