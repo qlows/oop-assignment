@@ -10,7 +10,8 @@ namespace oop_assignment
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            classMenu menu = new classMenu();
+            menu.mainMenu();
         }
     }
 }
