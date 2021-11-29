@@ -35,7 +35,7 @@ namespace oopAssignment
                         flightMenu();
                         break;
                     case 3:
-                        // Booking menu
+                        bookingMenu();
                         break;
                     case 4:
                         break;
