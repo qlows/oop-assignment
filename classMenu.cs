@@ -68,14 +68,41 @@ namespace oopAssignment
 
                 switch (input)
                 {
-                    case 1:
-                        // add customer function
+                    case 1: // Add Customer
+                        Console.Clear();
+                        string fName;
+                        string lName;
+                        long phone;
+                        Console.WriteLine("Adding new customer...\nPlease enter the following:");
+                        Console.Write("First Name: ");
+                        fName = Console.ReadLine();
+                        Console.Write("Last Name: ");
+                        lName = Console.ReadLine();
+                        Console.Write("Phone Number (no dashes or spaces): ");
+                        phone = Convert.ToInt64(Console.ReadLine());
+                        m.addCustomer(fName, lName, phone);
+                        Console.WriteLine("\nPress any key to go back to the Customer Menu...");
+                        Console.ReadKey();
+                        customerMenu();
                         break;
-                    case 2:
-                        // view customer function
+                    case 2: // View All Customers
+                        Console.Clear();
+                        Console.WriteLine(m.listAllCustomers());
+                        Console.WriteLine("\nPress any key to go back to the Customer Menu...");
+                        Console.ReadKey();
+                        customerMenu();
                         break;
-                    case 3:
-                        // delete customer function
+                    case 3: // Delete Customer
+                        Console.Clear();
+                        int delete;
+                        Console.WriteLine(m.listAllCustomers());
+                        Console.WriteLine("Removing a customer...");
+                        Console.Write("\nEnter a Customer ID to delete: ");
+                        delete = Convert.ToInt32(Console.ReadLine());
+                        m.deleteCustomer(delete);
+                        Console.WriteLine("\nPress any key to go back to the Customer Menu...");
+                        Console.ReadKey();
+                        customerMenu();
                         break;
                     case 4:
                         mainMenu();
