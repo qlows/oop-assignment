@@ -11,7 +11,9 @@ namespace oopAssignment
         private string fName;
         private string lName;
         private int phoneNumber;
-
+        
+        public string bookingID { get; private set; }
+        
         public Customer(int id, string fName, string lName, int phone)
         {
             customerID = id;
@@ -24,6 +26,7 @@ namespace oopAssignment
         public string getFirstName() { return fName; }
         public string getLastName() { return lName; }
         public int getPhoneNumber() { return phoneNumber; }
+        public int getBookingID(int bookingID) { return bookingID; }
 
         public string toString()
         {
@@ -31,6 +34,7 @@ namespace oopAssignment
             s += "\nFirst Name: " + fName;
             s += "\nLast Name: " + lName;
             s += "\nPhone Number: " + phoneNumber;
+            s += "\nbooking ID: " + bookingID; 
             return s;
         }
     }
