@@ -38,19 +38,6 @@ namespace oopAssignment
             return false;
         }
 
-        public bool addCustomer(string fnam, string lName, int phone)
-        {
-            if (numCustomer < maxCustomer)
-            {
-                Random rnd = new Random();
-                int id = rnd.Next(10000, 99999);
-                clist[maxCustomer] = new Customer(id, fnam, lName, phone);
-                numCustomer++;
-                return true;
-            }
-            return false;
-        }
-
         public string listAllCustomers()
         {
             string s = "=== Customer List ===\n";
