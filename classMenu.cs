@@ -8,6 +8,8 @@ namespace oopAssignment
 {
     class classMenu
     {
+        Manager m = new Manager();
+        
         public void mainMenu()
         {
             int input;
