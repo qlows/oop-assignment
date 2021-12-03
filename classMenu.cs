@@ -160,7 +160,7 @@ namespace oopAssignment
                         flightMenu();
                         break;
                     case 2: // List all Flights
-                        m.listAllFlights();
+                        Console.WriteLine(m.listAllFlights());
                         Console.WriteLine("\nPress any key to go back to the Flight Menu...");
                         Console.ReadKey();
                         flightMenu();
@@ -170,7 +170,7 @@ namespace oopAssignment
                         int fNum;
                         Console.Write("Finding Specific Flight...\nPlease enter Flight Number: ");
                         fNum = Convert.ToInt32(Console.ReadLine());
-                        m.findSpecificFlight(fNum);
+                        Console.WriteLine(m.findSpecificFlight(fNum));
                         Console.WriteLine("\nPress any key to go back to the Flight Menu...");
                         Console.ReadKey();
                         flightMenu();
