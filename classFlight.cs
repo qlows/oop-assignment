@@ -42,7 +42,7 @@ namespace oopAssignment
         {
             for (int x = 0; x < maxSeats; x++)
             {
-                if (passengers[x].getId() == custId)
+                if (passengers[x].getCustomerID() == custId)
                     return x;
             }
             return -1;
