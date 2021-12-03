@@ -38,20 +38,6 @@ namespace oopAssignment
             return false;
         }
 
-        public bool addBooking(int customerID, int flightID)
-        {
-            if (numBookings < maxBookings)
-            {
-                Random rnd = new Random();
-                int bID = rnd.Next(100, 999);
-                string date = DateTime.Now.ToString(@"MM\/dd\/yyyy h\:mm tt");
-                blist[numBookings] = new Booking(date, bID, customerID, flightID);
-                numBookings++;
-                return true;
-            }
-            return false;
-        }
-
         public bool addCustomer(string fnam, string lName, int phone)
         {
             if (numCustomer < maxCustomer)
@@ -95,6 +81,55 @@ namespace oopAssignment
             clist[loc] = clist[numCustomer - 1];
             numCustomer--;
             return true;
+        }
+
+        public string listAllFlights()
+        {
+            string s = "=== Flight List ===\n";
+            for (int i = 0; i < numFlight; i++)
+            {
+                if (flist[i].GetType() == typeof(Flight))
+                {
+                    s += flist[i].toString() + "\n";
+                }
+            }
+            return s;
+        }
+        public int findFlight(int fNum)
+        {
+            for (int x = 0; x < maxBookings; x++)
+            {
+                if (flist[x].getFlightNumber() == fNum)
+                    return x;
+            }
+            return -1;
+        }
+
+        public string findSpecificFlight(int fNum)
+        {
+            string s = "";
+            int loc = findFlight(fNum);
+            if (loc == -1)
+            {
+                s = "Flight not found.";
+            }
+            s += "=== Flight ===\n";
+            s += flist[loc].toString();
+            return s;
+        }
+
+        public bool addBooking(int customerID, int flightID)
+        {
+            if (numBookings < maxBookings)
+            {
+                Random rnd = new Random();
+                int bID = rnd.Next(100, 999);
+                string date = DateTime.Now.ToString(@"MM\/dd\/yyyy h\:mm tt");
+                blist[numBookings] = new Booking(date, bID, customerID, flightID);
+                numBookings++;
+                return true;
+            }
+            return false;
         }
     }
 }

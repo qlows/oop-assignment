@@ -9,7 +9,7 @@ namespace oopAssignment
     class classMenu
     {
         Manager m = new Manager();
-        
+
         public void mainMenu()
         {
             int input;
@@ -139,14 +139,41 @@ namespace oopAssignment
 
                 switch (input)
                 {
-                    case 1:
-                        // add flight function
+                    case 1: // Add Flight
+                        Console.Clear();
+                        int flightNum;
+                        string origin;
+                        string destination;
+                        int numSeats;
+                        Console.WriteLine("Adding new flight...\nPlease enter the following:");
+                        Console.Write("Flight Number: ");
+                        flightNum = Convert.ToInt32(Console.ReadLine());
+                        Console.Write("Flight Origin: ");
+                        origin = Console.ReadLine();
+                        Console.Write("Flight Destination: ");
+                        destination = Console.ReadLine();
+                        Console.Write("Number of Seats: ");
+                        numSeats = Convert.ToInt32(Console.ReadLine());
+                        m.addFlight(flightNum, origin, destination, numSeats);
+                        Console.WriteLine("\nPress any key to go back to the Flight Menu...");
+                        Console.ReadKey();
+                        flightMenu();
                         break;
-                    case 2:
-                        // view flight function
+                    case 2: // List all Flights
+                        m.listAllFlights();
+                        Console.WriteLine("\nPress any key to go back to the Flight Menu...");
+                        Console.ReadKey();
+                        flightMenu();
                         break;
-                    case 3:
-                        // view specific flight function
+                    case 3: // View Specific Flight
+                        Console.Clear();
+                        int fNum;
+                        Console.Write("Finding Specific Flight...\nPlease enter Flight Number: ");
+                        fNum = Convert.ToInt32(Console.ReadLine());
+                        m.findSpecificFlight(fNum);
+                        Console.WriteLine("\nPress any key to go back to the Flight Menu...");
+                        Console.ReadKey();
+                        flightMenu();
                         break;
                     case 4:
                         // delete flight
