@@ -105,6 +105,22 @@ namespace oopAssignment
             return s;
         }
 
+        public bool deleteFlight(int flightID)
+        {
+            int loc = findFlight(flightID);
+            if (flist[loc].getNumPassengers() > 0) return false;
+            flist[loc] = flist[numFlight - 1];
+            numFlight--;
+            return true;
+        }
+
+        public bool CheckExistFlight(int flightID)
+        {
+            int loc = findFlight(flightID);
+            if (loc == -1) return false;
+            return true;
+        }
+
         public bool addBooking(int customerID, int flightID)
         {
             if (numBookings < maxBookings)

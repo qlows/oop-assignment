@@ -101,7 +101,12 @@ namespace oopAssignment
                         Console.WriteLine("Removing a customer...");
                         Console.Write("\nEnter a Customer ID to delete: ");
                         delete = Convert.ToInt32(Console.ReadLine());
-                        m.deleteCustomer(delete);
+                        
+                        if (m.deleteCustomer(delete) == true)
+                            Console.WriteLine("\nSuccessfully Deleted.");
+                        else 
+                            Console.WriteLine("\nNo customer found.");
+
                         Console.WriteLine("\nPress any key to go back to the Customer Menu...");
                         Console.ReadKey();
                         customerMenu();
@@ -175,8 +180,27 @@ namespace oopAssignment
                         Console.ReadKey();
                         flightMenu();
                         break;
-                    case 4:
-                        // delete flight
+                    case 4: // Delete Flight
+                        Console.Clear();
+                        int delete;
+                        Console.WriteLine(m.listAllFlights());
+                        Console.WriteLine("Removing a flight...");
+                        Console.Write("\nEnter a Flight ID to delete: ");
+                        delete = Convert.ToInt32(Console.ReadLine());
+
+                        if (m.CheckExistFlight(delete) == true)
+                        {
+                            if (m.deleteFlight(delete) == true)
+                                Console.WriteLine("\nSuccessfully deleted");
+                            else
+                                Console.WriteLine("\nThis flight has passengers. Remove passengers first.");
+                        }
+                        else
+                            Console.WriteLine("\nCannot find flight.");
+
+                        Console.WriteLine("\nPress any key to go back to the Flight Menu...");
+                        Console.ReadKey();
+                        flightMenu();
                         break;
                     case 5:
                         mainMenu();
